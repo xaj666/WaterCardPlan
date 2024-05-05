@@ -51,7 +51,7 @@
         android:id="@+id/AndroidID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Android ID："
+        android:text="Android ID：null"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
