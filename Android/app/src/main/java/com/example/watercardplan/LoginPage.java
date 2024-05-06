@@ -26,12 +26,17 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLSession;
+
 public class LoginPage extends AppCompatActivity {
 
-    private static final String TAG = "LoginTag";
-    private static final String API_KEY = "http://150.158.85.14:4867/api/keys";
 
-    private static final String API_Android = "http://150.158.85.14:4867/api/Android";
+    private static final String TAG = "LoginTag";
+    private static final String API_KEY = "https://150.158.85.14:4867/api/keys";
+
+    private static final String API_Android = "https://150.158.85.14:4867/api/Android";
     private String[] keysArray;
 
     private String[] AndroidArray;
@@ -47,6 +52,7 @@ public class LoginPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
 
+
         Button button = findViewById(R.id.button);
         TextView ID = findViewById(R.id.AndroidID);
         EditText editText = findViewById(R.id.editText);
@@ -58,6 +64,14 @@ public class LoginPage extends AppCompatActivity {
 
         // 获取设备的 Android ID
         @SuppressLint("HardwareIds") String androidId = Secure.getString(getApplicationContext().getContentResolver(), Secure.ANDROID_ID);
+
+        //不验证主机名，始终接受连接
+        HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
+            public boolean verify(String hostname, SSLSession session) {
+                return true;
+            }
+        });
+
 
         // 设置点击事件监听器
         button.setOnClickListener(v -> {
@@ -131,7 +145,7 @@ public class LoginPage extends AppCompatActivity {
         clipboardManager.setPrimaryClip(clipData);
     }
 
-    //获取服务器Keys密钥数据
+    //获取服务器Key密钥数据
     @SuppressLint("StaticFieldLeak")
     private void fetchData() {
         new AsyncTask<Void, Void, Void>() {
@@ -208,7 +222,7 @@ public class LoginPage extends AppCompatActivity {
                     String keys = keysBuilder.toString().trim(); // 去除多余的空格
                     Log.d(TAG, "Keys密钥: \n" + keys);
                 } else {
-                    Toast.makeText(LoginPage.this, "未获取到Keys数据", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginPage.this, "服务器错误：未获取到Key数据", Toast.LENGTH_LONG).show();
                 }
             }
         }.execute();
@@ -292,7 +306,7 @@ public class LoginPage extends AppCompatActivity {
                     String keys = keysBuilder.toString().trim(); // 去除多余的空格
                     Log.d(TAG, "Android ID: \n" + keys);
                 } else {
-                    Toast.makeText(LoginPage.this, "未获取到Android ID数据", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginPage.this, "服务器错误：未获取到ID数据", Toast.LENGTH_LONG).show();
                 }
             }
         }.execute();
