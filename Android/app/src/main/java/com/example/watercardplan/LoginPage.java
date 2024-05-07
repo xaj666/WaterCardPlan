@@ -6,6 +6,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Settings.Secure;
@@ -23,6 +24,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -30,13 +32,17 @@ import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSession;
 
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.util.Enumeration;
 public class LoginPage extends AppCompatActivity {
 
 
     private static final String TAG = "LoginTag";
-    private static final String API_KEY = "https://150.158.85.14:4867/api/keys";
+    private static String API_KEY = "https://150.158.85.14:4867/api/keys";
 
-    private static final String API_Android = "https://150.158.85.14:4867/api/Android";
+    private static String API_Android = "https://150.158.85.14:4867/api/Android?secret_key=xaj";
     private String[] keysArray;
 
     private String[] AndroidArray;
@@ -51,6 +57,7 @@ public class LoginPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
+        getWindow().setStatusBarColor(Color.GRAY); //改变系统状态栏颜色
 
 
         Button button = findViewById(R.id.button);
@@ -75,30 +82,44 @@ public class LoginPage extends AppCompatActivity {
 
         // 设置点击事件监听器
         button.setOnClickListener(v -> {
+            KeysFlag = false;
+            AndroidFlag = false;
 
-            // 异步获取服务器端的数据
-            fetchData();
-            fetchAndroid();
 
             if (keysArray != null) {
                 for (String key : keysArray) {
                     if (editText.getText().toString().equals(key)) {
                         KeysFlag = true;
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Key密钥验证失败", Toast.LENGTH_SHORT).show();
+                        API_Android = "https://150.158.85.14:4867/api/Android?secret_key=" + key;
+                        Log.d(TAG, "Key success:"+API_Android);
+                        break;
                     }
                 }
             }
 
-            if (AndroidArray != null) {
-                for (String Android : AndroidArray) {
-                    if (androidId.equals(Android)) {
+            //异步获取服务器端的数据
+            fetchAndroidSync();
+
+            if (AndroidArray != null && KeysFlag) {
+                for (String Android_id : AndroidArray) {
+                    if (androidId.equals(Android_id)) {
                         AndroidFlag = true;
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Android ID验证失败", Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, "ID success:"+ Android_id);
+                        break;
                     }
                 }
             }
+
+
+            if(KeysFlag == false)
+                Toast.makeText(getApplicationContext(), "Key密钥验证失败", Toast.LENGTH_SHORT).show();
+            else if (AndroidFlag == false)
+                Toast.makeText(getApplicationContext(), "Android ID验证失败", Toast.LENGTH_SHORT).show();
+
+
+
+
+
 
             if (KeysFlag && AndroidFlag) {
                 // 保存输入框中的文本到 SharedPreferences
@@ -106,6 +127,8 @@ public class LoginPage extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("savedText", inputText);
                 editor.apply();
+                sendId(androidId);
+                GetIP();
                 // 创建一个Intent对象，指定要启动的Activity
                 Intent intent = new Intent(LoginPage.this, TestPage.class);
                 // 启动第二个Activity
@@ -120,7 +143,7 @@ public class LoginPage extends AppCompatActivity {
         });
 
         // 打印 Android ID 到控制台
-        Log.d(TAG, "Android ID: " + androidId);
+        //Log.d(TAG, "Android ID: " + androidId);
 
         // 将 Android ID 复制到剪贴板
         copyToClipboard(androidId);
@@ -133,7 +156,7 @@ public class LoginPage extends AppCompatActivity {
 
         // 异步获取服务器端的数据
         fetchData();
-        fetchAndroid();
+        //fetchAndroid();
 
 
     }
@@ -220,7 +243,7 @@ public class LoginPage extends AppCompatActivity {
                         keysBuilder.append(key).append("\n");
                     }
                     String keys = keysBuilder.toString().trim(); // 去除多余的空格
-                    Log.d(TAG, "Keys密钥: \n" + keys);
+                    //Log.d(TAG, "Keys密钥: \n" + keys);
                 } else {
                     Toast.makeText(LoginPage.this, "服务器错误：未获取到Key数据", Toast.LENGTH_LONG).show();
                 }
@@ -231,10 +254,11 @@ public class LoginPage extends AppCompatActivity {
 
     //获取服务器Android_id密钥数据
     @SuppressLint("StaticFieldLeak")
-    private void fetchAndroid() {
-        new AsyncTask<Void, Void, Void>() {
+    private void fetchAndroidSync() {
+        // 在新线程中执行网络请求
+        Thread thread = new Thread(new Runnable() {
             @Override
-            protected Void doInBackground(Void... voids) {
+            public void run() {
                 HttpURLConnection urlConnection = null;
                 BufferedReader reader = null;
                 String responseData = null;
@@ -249,7 +273,7 @@ public class LoginPage extends AppCompatActivity {
                     StringBuilder buffer = new StringBuilder();
                     if (inputStream == null) {
                         // Nothing to do.
-                        return null;
+                        return;
                     }
                     reader = new BufferedReader(new InputStreamReader(inputStream));
 
@@ -260,7 +284,7 @@ public class LoginPage extends AppCompatActivity {
 
                     if (buffer.length() == 0) {
                         // Stream was empty. No point in parsing.
-                        return null;
+                        return;
                     }
                     responseData = buffer.toString();
                 } catch (IOException e) {
@@ -280,11 +304,11 @@ public class LoginPage extends AppCompatActivity {
 
                 if (responseData != null) {
                     try {
-                        JSONArray keysJSONArray = new JSONArray(responseData);
+                        JSONObject keysJSONObject = new JSONObject(responseData);
+                        JSONArray keysJSONArray = keysJSONObject.getJSONArray("android_id");
                         AndroidArray = new String[keysJSONArray.length()];
                         for (int i = 0; i < keysJSONArray.length(); i++) {
-                            JSONObject keyJSONObject = keysJSONArray.getJSONObject(i);
-                            String secretKey = keyJSONObject.getString("android_id");
+                            String secretKey = keysJSONArray.getString(i);
                             AndroidArray[i] = secretKey;
                         }
                     } catch (JSONException e) {
@@ -292,24 +316,125 @@ public class LoginPage extends AppCompatActivity {
                     }
                 }
 
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(Void aVoid) {
-                // 在这里处理你得到的keys数据
+                // 处理获取到的数据
                 if (AndroidArray != null && AndroidArray.length > 0) {
                     StringBuilder keysBuilder = new StringBuilder();
                     for (String key : AndroidArray) {
                         keysBuilder.append(key).append("\n");
                     }
                     String keys = keysBuilder.toString().trim(); // 去除多余的空格
-                    Log.d(TAG, "Android ID: \n" + keys);
+                    //Log.d(TAG, "Android ID: \n" + keys);
                 } else {
+                    // 处理未获取到数据的情况
                     Toast.makeText(LoginPage.this, "服务器错误：未获取到ID数据", Toast.LENGTH_LONG).show();
                 }
             }
-        }.execute();
+        });
+
+        thread.start();
+        try {
+            thread.join(); // 等待网络请求线程执行完毺
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+    // 在 LoginPage 类中添加一个名为 sendId 的方法
+    private void sendId(String androidId) {
+        ApiManager.sendId(androidId);
+    }
+
+
+    //ApiPost
+    public static class ApiManager {
+
+        public static void sendId(String androidId) {
+            new AddAndroidIdTask().execute(androidId);
+        }
+
+        private static class AddAndroidIdTask extends AsyncTask<String, Void, String> {
+            @Override
+            protected String doInBackground(String... params) {
+                String androidId = params[0];
+                String apiUrl = "https://150.158.85.14:4867/api/addAndroid/" + androidId;
+
+                try {
+                    URL url = new URL(apiUrl);
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                    connection.setRequestMethod("POST");
+                    connection.setRequestProperty("Content-Type", "application/json");
+                    connection.setDoOutput(true);
+
+                    JSONObject jsonParam = new JSONObject();
+                    jsonParam.put("android_id", androidId);
+
+                    OutputStream os = connection.getOutputStream();
+                    os.write(jsonParam.toString().getBytes());
+                    os.flush();
+                    os.close();
+
+                    InputStream inputStream = connection.getInputStream();
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                    StringBuilder response = new StringBuilder();
+                    String line;
+
+                    while ((line = bufferedReader.readLine()) != null) {
+                        response.append(line);
+                    }
+
+                    bufferedReader.close();
+                    return response.toString();
+
+                } catch (IOException | JSONException e) {
+                    Log.e(TAG, "Error: " + e.getMessage());
+                    return null;
+                }
+            }
+
+            @Override
+            protected void onPostExecute(String result) {
+                if (result != null) {
+                    Log.d(TAG, "Response: " + result);
+                    // Handle the response from the server here
+                } else {
+                    Log.e(TAG, "Failed to add Android ID");
+                }
+            }
+        }
+    }
+
+
+    // 在 LoginPage 类中添加一个名为 GetIP 的方法
+    private void GetIP() {
+        String ipAddress = NetworkUtils.getIPAddress();
+        Log.d(TAG, "IP Address: " + ipAddress);
+    }
+
+
+    //获取IP
+    public static class NetworkUtils {
+
+        public static String getIPAddress() {
+            try {
+                Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
+                while (interfaces.hasMoreElements()) {
+                    NetworkInterface networkInterface = interfaces.nextElement();
+                    Enumeration<InetAddress> addresses = networkInterface.getInetAddresses();
+                    while (addresses.hasMoreElements()) {
+                        InetAddress address = addresses.nextElement();
+                        if (address instanceof Inet4Address && !address.isLoopbackAddress()) {
+                            return address.getHostAddress();
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
     }
 
 
