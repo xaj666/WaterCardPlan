@@ -17,3 +17,5 @@ connection.connect((err)=>{
     }
     console.log('成功连接到数据库');
 })
+// 导出数据库连接
+module.exports = connection;

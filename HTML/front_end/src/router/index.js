@@ -7,8 +7,10 @@ import About from '../views/AboutPage.vue';
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/about', component: About }
+  { path: '/index', component: Home },
+  { path: '/about', component: About },
+  // 重定向
+  {path: '/', redirect: '/index'}
 ];
 
 const router = new VueRouter({
