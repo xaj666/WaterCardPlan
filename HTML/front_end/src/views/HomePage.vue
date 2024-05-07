@@ -52,15 +52,13 @@
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="AddUseDialogVisible = false">取消</el-button>
-        <el-button type="primary" @click="handleAdd">确定</el-button>
+        <el-button type="primary" @click="handleLogin">确定</el-button>
       </span>
     </el-dialog>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
   // Component definition
   methods: {
@@ -69,20 +67,20 @@ export default {
     UserLoginDialog() {
       this.AddUseDialogVisible = true;
     },
-    handleAdd() {
+    handleLogin() {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           // 在这里处理添加用户逻辑
-          axios.post('/api/addUser', this.loginForm)
-                .then(response => {
-                    // 添加用户成功后更新 tableData 数组
-                    this.tableData.push(response.data);
-                    // 关闭对话框
-                    this.AddUseDialogVisible = false;
-                })
-                .catch(error => {
-                    console.error('Error adding user: ' + error);
-                });
+          const newUser = {
+            ID: this.tableData.length + 1, // 自增ID
+            User: this.loginForm.user,
+            Key: this.loginForm.Key,
+            IMEI: this.loginForm.IMEI,
+            points: this.loginForm.points,
+          };
+          this.tableData.push(newUser);
+          // 关闭对话框
+          this.AddUseDialogVisible = false;
         } else {
           return false;
         }
@@ -106,7 +104,6 @@ export default {
         });
       });
     }
-
   },
   data() {
     return {
@@ -147,7 +144,6 @@ export default {
   }
 }
 </script>
-
 <style>
 h1 {
   text-align: center;
