@@ -8,3 +8,6 @@ back_end后端开发文档
     password:'123456',// 数据库密码
     database:'watercardplan'// 数据库名
 3.完成刷新表格top请求
+----2024.5.8----
+1.完成添加用户post请求
+2.完成删除用户delete请求
