@@ -55,6 +55,27 @@ app.delete('/api/deleteUser/:username', (req, res) => {
         }
     });
 });
+// 更新用户
+app.put('/api/updateUser', (req, res) => {
+    const secret_key = req.body.secret_key; // 获取要更新的用户的 secret_key
+    const updatedUser = req.body; // 获取要更新的用户数据
+
+    // 构造 SQL 查询语句，使用 secret_key 作为查找条件
+    const sql = 'UPDATE User SET ? WHERE secret_key = ?';
+
+    // 执行更新操作
+    db.query(sql, [updatedUser, secret_key], (err, result) => {
+        if (err) {
+            console.error('更新用户失败:', err);
+            return res.status(500).json({ message: '更新用户失败' });
+        }
+        if (result.affectedRows > 0) {            
+            return res.status(200).json({ message: '用户更新成功' });
+        } else {
+            return res.status(404).json({ message: '未找到要更新的用户' });
+        }
+    });
+})
 
 // 使 express 监听 8080 端口号发起的 http 请求
 const server = app.listen(8081, function () {

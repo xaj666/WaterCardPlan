@@ -8,7 +8,7 @@ const connection=mysql.createConnection({
     password:'497545',// 数据库密码
     database:'watercardplan'// 数据库名
 })
-    
+                
 // 连接到数据库
 connection.connect((err)=>{
     if(err){

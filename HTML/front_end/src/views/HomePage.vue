@@ -5,12 +5,12 @@
     <el-col>
       <h1>WaterCardPlan后台管理系统</h1>
       <el-row type="flex">
-        <el-button type="primary" icon="el-icon-user" @click="UserLoginDialog">添加</el-button>
+        <el-button type="primary" icon="el-icon-user" @click="addUser">添加</el-button>
         <el-button type="primary" icon="el-icon-loading" @click="refreshData">刷新</el-button>
       </el-row>
       <div style="height: 10px;"></div>
       <el-table :data="tableData" border width="100%">
-        <el-table-column fixed prop="ID" label="序号" width="50" align="center">
+        <el-table-column fixed prop="number" label="序号" width="50" align="center">
         </el-table-column>
         <el-table-column prop="username" label="用户" width="150" align="center">
         </el-table-column>
@@ -25,7 +25,7 @@
         <el-table-column fixed="right" label="操作" width="150" align="center">
           <template slot-scope="scope">
             <!--修改按钮-->
-            <el-button type="primary" icon="el-icon-edit" circle></el-button>
+            <el-button type="primary" icon="el-icon-edit" circle @click="updateUser(scope.row)"></el-button>
             <!--删除按钮-->
             <el-button type="danger" icon="el-icon-delete" circle @click="deleteUser(scope.row)"></el-button>
           </template>
@@ -50,7 +50,7 @@
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="AddUseDialogVisible = false">取消</el-button>
-        <el-button type="primary" @click="addUser">确定</el-button>
+        <el-button type="primary" @click="submit">确定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -74,7 +74,7 @@ export default {
       // 安卓ID：android_id
       // 积分：score
       // IP：ip
-      tableData: [],
+      tableData: [],//表格数据初始化
       AddUseDialogVisible: false,// 添加用户对话框不可见
       userTitle: '',//用户表单初始标题
       // 表单验证规则
@@ -93,61 +93,89 @@ export default {
         ],
       },
       // 用户表单数据
-      userForm: {
-        username: '',
-        secret_key: '',
-        android_id: '',
-        score: '',
-      },
-
+      userForm: {},
+      newUser: {},//定义封装体
+      addOrupdate: true,
     }
   },
 
   methods: {
-    //重置表单
-    resetUserForm() {
-      this.$refs.userForm.resetFields();
-    },
     // 显示添加用户对话框
-    UserLoginDialog() {
+    userDialog() {
       this.AddUseDialogVisible = true;
-      this.resetUserForm();
     },
-    //添加用户逻辑
-    addUser() {
+    //表单获取数据
+    getUserInformation(row) {
+      //console.log(row);
+      this.userForm = {
+        username: row.username,
+        secret_key: row.secret_key,
+        android_id: row.android_id,
+        score: row.score
+      }
+    },
+    // 添加/修改用户逻辑
+    submit() {
       this.$refs.userForm.validate(valid => {
         // 表单校验通过
         if (valid) {
           // 创建新用户对象
-          const newUser = {
+          this.newUser = {
             username: this.userForm.username,
             secret_key: this.userForm.secret_key,
             android_id: this.userForm.android_id,
             score: this.userForm.score,
           };
-          // 发送POST请求到后端API
-          axios.post(backendBaseUrl + '/api/addUser', newUser)
-            .then(response => {
-              console.log(response.data);// 打印响应数据
-              this.AddUseDialogVisible = false;// 关闭对话框等其他操作
-              this.refreshData();// 添加成功后刷新数据
-            })
-            .catch(error => {
-              console.error('Error adding user:', error);
-              // 在这里添加适当的错误处理逻辑，比如显示错误提示
-            });
+          if (this.addOrupdate) {// 发送添加用户请求POST请求到后端API
+            this.addUserPost();
+          } else {// 发送修改用户请求PUT请求到后端API
+            this.updateUserPut();
+          }
+          this.AddUseDialogVisible = false;// 关闭对话框等其他操作
         } else {
           return false;
         }
       });
     },
-    //刷新
+    //添加用户请求
+    addUserPost() {
+      axios.post(backendBaseUrl + '/api/addUser', this.newUser)
+        .then(response => {
+          console.log(response.data);// 打印响应数据
+          this.refreshData();// 添加成功后刷新数据
+        })
+        .catch(error => {
+          console.error('Error adding user:', error);
+          // 在这里添加适当的错误处理逻辑，比如显示错误提示
+        });
+    },
+    //修改用户请求
+    updateUserPut() {
+      console.log(this.userForm); // 检查一下表单数据是否正确
+      // 发送修改用户请求PUT请求到后端API
+      axios.put(backendBaseUrl + '/api/updateUser/', this.userForm)
+        .then(response => {
+          console.log(response.data); // 打印响应数据
+          this.refreshData(); // 添加成功后刷新数据
+        })
+        .catch(error => {
+          console.error('Error updating user:', error);
+          // 在这里添加适当的错误处理逻辑，比如显示错误提示
+        });
+    },
+    //添加用户按钮
+    addUser() {
+      this.addOrupdate = true;
+      this.userForm = {}; // 重置表单数据
+      this.userDialog(); // 显示添加用户对话框
+    },
+    //刷新按钮
     refreshData() {
       axios.get(backendBaseUrl + '/API/Refresh')
         .then(response => {// 请求成功，response是响应对象
           //编号
           response.data.forEach((user, index) => {
-            user.ID = index + 1;
+            user.number = index + 1;
           });
           console.log(response.data);
           this.tableData = response.data;
@@ -156,7 +184,7 @@ export default {
           console.error('请求失败：', error);
         });
     },
-    //删除用户
+    //删除用户按钮
     deleteUser(row) {
       const username = row.username;
       console.log(username);
@@ -168,7 +196,7 @@ export default {
       }).then(() => {
         // 用户点击了确定按钮
         // 发送删除请求到后端
-        axios.delete(backendBaseUrl+`/api/deleteUser/${username}`)
+        axios.delete(backendBaseUrl + `/api/deleteUser/${username}`)
           .then(response => {
             // 删除成功，显示成功消息
             this.$message({
@@ -193,6 +221,13 @@ export default {
           message: '已取消删除'
         });
       });
+    },
+    //修改用户按钮
+    updateUser(row) {
+      this.addOrupdate = false;
+      this.getUserInformation(row);
+      this.userTitle = "修改用户信息"
+      this.AddUseDialogVisible = true;//显示对话框
     }
   },
 }
