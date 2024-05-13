@@ -74,6 +74,7 @@ export default {
       // 安卓ID：android_id
       // 积分：score
       // IP：ip
+      id: "",
       tableData: [],//表格数据初始化
       AddUseDialogVisible: false,// 添加用户对话框不可见
       userTitle: '',//用户表单初始标题
@@ -100,10 +101,6 @@ export default {
   },
 
   methods: {
-    // 显示添加用户对话框
-    userDialog() {
-      this.AddUseDialogVisible = true;
-    },
     //表单获取数据
     getUserInformation(row) {
       //console.log(row);
@@ -151,10 +148,21 @@ export default {
     },
     //修改用户请求
     updateUserPut() {
-      console.log(this.userForm); // 检查一下表单数据是否正确
+      this.newUser = {
+        id: this.id,
+        username: this.userForm.username,
+        secret_key: this.userForm.secret_key,
+        android_id: this.userForm.android_id,
+        score: this.userForm.score,
+      };
+      console.log(this.newUser); // 检查一下表单数据是否正确
       // 发送修改用户请求PUT请求到后端API
-      axios.put(backendBaseUrl + '/api/updateUser/', this.userForm)
+      axios.put(backendBaseUrl + '/api/updateUser', this.newUser)
         .then(response => {
+          this.$message({
+              type: 'success',
+              message: response.data.message // 从后端返回的消息
+            });
           console.log(response.data); // 打印响应数据
           this.refreshData(); // 添加成功后刷新数据
         })
@@ -167,7 +175,20 @@ export default {
     addUser() {
       this.addOrupdate = true;
       this.userForm = {}; // 重置表单数据
-      this.userDialog(); // 显示添加用户对话框
+      this.userTitle = "添加用户"
+      axios.get(backendBaseUrl + '/API/Key')
+        .then(response => {// 请求成功，response是响应对象
+          this.userForm={
+            secret_key:response.data}
+        })
+        .catch(error => {// 请求失败，error是错误对象
+          console.error('请求失败：', error);
+          this.$message({
+              type: 'error',
+              message: '删除用户失败，请稍后重试'
+            });
+        });
+        this.AddUseDialogVisible = true;//显示对话框
     },
     //刷新按钮
     refreshData() {
@@ -186,8 +207,7 @@ export default {
     },
     //删除用户按钮
     deleteUser(row) {
-      const username = row.username;
-      console.log(username);
+      console.log(row.id);
       // 弹出确认对话框
       this.$confirm('此操作将永久删除该用户, 是否继续?', '提示', {
         confirmButtonText: '确定',
@@ -196,7 +216,7 @@ export default {
       }).then(() => {
         // 用户点击了确定按钮
         // 发送删除请求到后端
-        axios.delete(backendBaseUrl + `/api/deleteUser/${username}`)
+        axios.delete(backendBaseUrl + `/api/deleteUser/${row.id}`)
           .then(response => {
             // 删除成功，显示成功消息
             this.$message({
@@ -227,6 +247,7 @@ export default {
       this.addOrupdate = false;
       this.getUserInformation(row);
       this.userTitle = "修改用户信息"
+      this.id = row.id;
       this.AddUseDialogVisible = true;//显示对话框
     }
   },

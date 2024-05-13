@@ -1,12 +1,49 @@
 const express = require('express'); // 引入 express 模块
 const cors = require('cors'); // 引入 cors 模块
 const db = require('./db'); // 引入数据库模块
+const crypto = require('crypto'); // 引入 crypto 模块
+const { log } = require('console');
 
 
 const app = express(); // 创建 express 应用
 app.use(cors()); // 使用 cors 中间件
 app.use(express.json());// 解析 application/json 请求体
 
+//生成key函数
+function generateKey() {
+    const randomBytes = crypto.randomBytes(24);// 生成一个长度为16的随机字符串
+    const key = randomBytes.toString('base64').replace(/[\/\n]/g, '');// 将随机字符串转换为 base64 编码，并替换掉特殊字符
+    const onlyDigitsAndLetters = key.replace(/[^a-zA-Z0-9]/g, '');// 只保留数字和字母
+    return onlyDigitsAndLetters.substring(0, 24);// 返回前16个字符
+}
+//查询key是否重复函数
+function checkKey(key) {
+    const sql = 'SELECT * FROM User WHERE secret_key = ?';
+    db.query(sql, key, (err, result) => {
+        if (err) {
+            console.error('查询数据失败：', err);
+            return true;
+        }
+        if (result.length > 0) {
+            console.log('Key已存在：', key);
+            return true;
+        }
+        console.log('Key可用：', key);
+        return false;
+    });
+}
+function addKey() {
+    key = generateKey();
+    while(checkKey(key)){
+        key = generateKey();
+    }
+    return key;
+}
+
+
+app.get('/API/key', (req, res) => {
+    res.json(addKey());
+})
 
 // 查询数据库以获取最新的数据
 app.get('/API/refresh', function (req, res) {
@@ -39,10 +76,10 @@ app.post('/api/addUser', (req, res) => {
     });
 });
 // 删除用户
-app.delete('/api/deleteUser/:username', (req, res) => {
-    const username = req.params.username; // 获取要删除的用户名
-    const sql = `DELETE FROM User WHERE username = ?`; // SQL 查询语句
-    db.query(sql, [username], (err, result) => {
+app.delete('/api/deleteUser/:id', (req, res) => {
+    const id = req.params.id; // 获取要删除的用户名
+    const sql = `DELETE FROM User WHERE id = ?`; // SQL 查询语句
+    db.query(sql, [id], (err, result) => {
         if (err) {
             console.error('删除用户失败:', err);
             res.status(500).json({ message: '删除用户失败' });
@@ -57,14 +94,12 @@ app.delete('/api/deleteUser/:username', (req, res) => {
 });
 // 更新用户
 app.put('/api/updateUser', (req, res) => {
-    const secret_key = req.body.secret_key; // 获取要更新的用户的 secret_key
+    const id = req.body.id; // 获取要更新的用户的 id
     const updatedUser = req.body; // 获取要更新的用户数据
-
-    // 构造 SQL 查询语句，使用 secret_key 作为查找条件
-    const sql = 'UPDATE User SET ? WHERE secret_key = ?';
-
+    // 构造 SQL 查询语句，使用 id 作为查找条件
+    const sql = 'UPDATE User SET ? WHERE id = ?';
     // 执行更新操作
-    db.query(sql, [updatedUser, secret_key], (err, result) => {
+    db.query(sql, [updatedUser, id], (err, result) => {
         if (err) {
             console.error('更新用户失败:', err);
             return res.status(500).json({ message: '更新用户失败' });
