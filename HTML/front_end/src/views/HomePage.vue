@@ -58,7 +58,7 @@
 
 <script>
 import axios from 'axios';// 引入axios
-const backendBaseUrl = 'http://localhost:8081'// 设置后端API的基本URL
+const backendBaseUrl = 'https://150.158.85.14:4867'// 设置后端API的基本URL
 export default {
   //网页加载
   created() {
