@@ -58,7 +58,7 @@
 
 <script>
 import axios from 'axios';// 引入axios
-const backendBaseUrl = 'http://150.158.85.14:4867'// 设置后端API的基本URL
+const backendBaseUrl = 'http://122.51.66.112:4867'// 设置后端API的基本URL
 export default {
   //网页加载
   created() {
@@ -185,7 +185,7 @@ export default {
           console.error('请求失败：', error);
           this.$message({
               type: 'error',
-              message: '删除用户失败，请稍后重试'
+              message: '添加用户失败，请稍后重试'
             });
         });
         this.AddUseDialogVisible = true;//显示对话框
