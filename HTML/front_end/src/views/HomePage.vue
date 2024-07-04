@@ -10,19 +10,19 @@
       </el-row>
       <div style="height: 10px;"></div>
       <el-table :data="tableData" border width="100%">
-        <el-table-column fixed prop="number" label="序号" width="50" align="center">
+        <el-table-column prop="number" label="序号" width='100' align="center">
         </el-table-column>
-        <el-table-column prop="username" label="用户" width="150" align="center">
+        <el-table-column prop="username" label="用户"  align="center">
         </el-table-column>
-        <el-table-column prop="secret_key" label="Key序列号" width="150" align="center">
+        <el-table-column prop="secret_key" label="Key序列号"  align="center">
         </el-table-column>
-        <el-table-column prop="android_id" label="设备码" width="150" align="center">
+        <el-table-column prop="android_id" label="设备码"  align="center">
         </el-table-column>
-        <el-table-column prop="score" label="积分" width="100" align="center">
+        <el-table-column prop="score" label="积分"  align="center">
         </el-table-column>
-        <el-table-column prop="ip" label="登录IP" width="150" align="center">
+        <el-table-column prop="ip" label="登录IP"  align="center">
         </el-table-column>
-        <el-table-column fixed="right" label="操作" width="150" align="center">
+        <el-table-column label="操作"  align="center">
           <template slot-scope="scope">
             <!--修改按钮-->
             <el-button type="primary" icon="el-icon-edit" circle @click="updateUser(scope.row)"></el-button>
@@ -58,7 +58,7 @@
 
 <script>
 import axios from 'axios';// 引入axios
-const backendBaseUrl = 'https://150.158.85.14:4867'// 设置后端API的基本URL
+const backendBaseUrl = 'http://150.158.85.14:4867'// 设置后端API的基本URL
 export default {
   //网页加载
   created() {
@@ -197,6 +197,12 @@ export default {
           //编号
           response.data.forEach((user, index) => {
             user.number = index + 1;
+            // Ensure all required fields are present in each user object
+            if (!user.username) user.username = "";
+            if (!user.secret_key) user.secret_key = "";
+            if (!user.android_id) user.android_id = "";
+            if (!user.score) user.score = 0;
+            if (!user.ip) user.ip = "";
           });
           console.log(response.data);
           this.tableData = response.data;
@@ -261,7 +267,8 @@ h1 {
 }
 
 #app {
-  width: 78%;
+  width: 80%;
   margin: 0 auto;
 }
+
 </style>
