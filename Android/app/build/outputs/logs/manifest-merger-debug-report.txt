@@ -1,0 +1,479 @@
+-- Merging decision tree log ---
+provider#androidx.core.content.FileProvider
+INJECTED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:63:9-73:20
+	android:grantUriPermissions
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:65:13-47
+	android:authorities
+		INJECTED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:67:13-64
+	android:exported
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:66:13-37
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:64:13-62
+manifest
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:22:1-199:12
+INJECTED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:22:1-199:12
+INJECTED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:22:1-199:12
+INJECTED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:22:1-199:12
+MERGED from [androidx.preference:preference:1.2.1] C:\Users\Administrator\.gradle\caches\transforms-3\f17c21179b44b5d05856daeaf761c14c\transformed\preference-1.2.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment-ktx:1.3.6] C:\Users\Administrator\.gradle\caches\transforms-3\5a196f3011f09bbb706cd7461dc682fa\transformed\fragment-ktx-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\5455636bc85181c0a21f822687264bac\transformed\activity-ktx-1.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\77d2cbdb4de6c628519ab4d90979988c\transformed\lifecycle-runtime-ktx-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\461b4f411cee928226880e754ff5a0e9\transformed\lifecycle-viewmodel-ktx-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\4ff0462df5cc328cd57c17a376d61273\transformed\recyclerview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\6def6f813300e9bd7449777dc6fda46f\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\a6cd131cca843ac389c33e92e06e4d74\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\b4cad56984880e50deaf9c7d03015f9c\transformed\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Administrator\.gradle\caches\transforms-3\c171526d8948803ebdd8f7f537c4461e\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\d53df0ed3870466083a10ae7b1d96a92\transformed\activity-1.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\3bbce49cc48fe419b46b3a70b74e2445\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\f026369501957258f6b3c2df15bbbc17\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\97f39fae2b7b3f843f9f23d893056dd7\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\a741b1b83017877fd5faca4170d7c389\transformed\lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\145370d27bb295ca5acf1955d418de59\transformed\appcompat-resources-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\95459dc98d6a26592f58f168a80b37d2\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\26c4bc0cd3bebfe9e9f96714aaaed8ed\transformed\core-ktx-1.10.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\bdb049da2e9eafcba6736cd19464dc52\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\57611defdae41c5a0cd51b4a30ebe0c4\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\cae6100490d69f8a2a6d147621460538\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.4.1] C:\Users\Administrator\.gradle\caches\transforms-3\ced39659dee302de6f21b3ffe21b6e74\transformed\transition-1.4.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\9d9927cce17808912b68e6c4915d23dc\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\f779d3d70e57d253791cb042bd462ad0\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\3b7a90e1d5e8cd09c9bdd8ec991c91b8\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\b06296d823e93044885f7c93cd7e3aa9\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\Administrator\.gradle\caches\transforms-3\3b5a89454808b6f103e0ff3d2d28b84c\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\0e721d4f4bdbac6a094b70523764327e\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Administrator\.gradle\caches\transforms-3\0d6cca208fca7cf6632e529935f5fb2e\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\b5e2b672b7b6f0fe9eb5ee827391dad2\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\fef51a713467a3c140939ddea475175d\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\6ff0237a39894abe18560bf06348e321\transformed\savedstate-ktx-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\84324423330e4729299f680d244c7100\transformed\savedstate-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\800a3eb36036bfd493f29c5e552b6aa0\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.1] C:\Users\Administrator\.gradle\caches\transforms-3\9632f2d589ec9eb1fc0072f7ef1fd142\transformed\lifecycle-livedata-core-ktx-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\85aadfeade8aa053845c471269dfe796\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\42f7595b7cbf5cf9587647af6581f719\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\18fdc00465d0e048f1afa53d460faca6\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\7920921d5df7516be8eede1b8d90c06e\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\1117ba95609ee7f33b39b0d2e98af18a\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\ea595d6e9bc5347c74e332902789636b\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+	package
+		INJECTED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:22:11-69
+uses-permission#android.permission.NFC
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:24:5-62
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:24:22-59
+uses-permission#android.permission.INTERNET
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:25:5-67
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:25:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:26:5-79
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:26:22-76
+uses-feature#android.hardware.nfc
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:29:5-31:35
+	android:required
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:31:9-32
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:30:9-44
+application
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:33:5-197:19
+INJECTED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:33:5-197:19
+MERGED from [androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Administrator\.gradle\caches\transforms-3\0d6cca208fca7cf6632e529935f5fb2e\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Administrator\.gradle\caches\transforms-3\0d6cca208fca7cf6632e529935f5fb2e\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+	android:extractNativeLibs
+		INJECTED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml
+	android:requestLegacyExternalStorage
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:36:9-52
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:38:9-41
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:37:9-43
+	android:allowBackup
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:35:9-36
+	android:theme
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:39:9-40
+	android:usesCleartextTraffic
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:40:9-44
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:34:9-31
+activity#de.jxvtc.WaterCardTool.Activities.Login
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:42:9-52:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:45:13-56
+	android:launchMode
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:47:13-43
+	android:exported
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:46:13-36
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:44:13-74
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:43:13-45
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:48:13-51:29
+action#android.intent.action.MAIN
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:49:17-69
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:49:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:50:17-77
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:50:27-74
+activity#de.jxvtc.WaterCardTool.Activities.MainMenu
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:55:9-60:46
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:58:13-56
+	android:launchMode
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:60:13-43
+	android:exported
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:59:13-36
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:57:13-59
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:56:13-48
+activity#de.jxvtc.WaterCardTool.Activities.KeyMapCreator
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:76:9-81:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:80:13-66
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:78:13-74
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:79:13-56
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:77:13-53
+activity#de.jxvtc.WaterCardTool.Activities.DumpEditor
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:82:9-87:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:86:13-63
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:84:13-74
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:85:13-47
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:83:13-50
+activity#de.jxvtc.WaterCardTool.Activities.FileChooser
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:88:9-93:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:91:13-64
+	android:windowSoftInputMode
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:92:13-60
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:90:13-42
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:89:13-51
+activity#de.jxvtc.WaterCardTool.Activities.AccessConditionDecoder
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:94:9-99:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:98:13-69
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:96:13-59
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:97:13-55
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:95:13-62
+activity#de.jxvtc.WaterCardTool.Activities.ValueBlocksToInt
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:100:9-105:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:104:13-64
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:102:13-59
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:103:13-56
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:101:13-56
+activity#de.jxvtc.WaterCardTool.Activities.WriteTag
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:106:9-111:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:110:13-61
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:108:13-74
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:109:13-47
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:107:13-48
+activity#de.jxvtc.WaterCardTool.Activities.ReadTag
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:112:9-117:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:116:13-60
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:114:13-74
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:115:13-46
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:113:13-47
+activity#de.jxvtc.WaterCardTool.Activities.KeyEditor
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:118:9-123:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:122:13-62
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:120:13-74
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:121:13-47
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:119:13-49
+activity#de.jxvtc.WaterCardTool.Activities.HelpAndInfo
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:124:9-129:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:128:13-56
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:126:13-59
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:127:13-51
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:125:13-51
+activity#de.jxvtc.WaterCardTool.Activities.HexToAscii
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:130:9-135:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:134:13-64
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:132:13-59
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:133:13-50
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:131:13-50
+activity#de.jxvtc.WaterCardTool.Activities.TagInfoTool
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:136:9-141:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:140:13-60
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:138:13-59
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:139:13-46
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:137:13-51
+activity#de.jxvtc.WaterCardTool.Activities.ValueBlockTool
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:142:9-147:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:146:13-68
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:144:13-59
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:145:13-54
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:143:13-54
+activity#de.jxvtc.WaterCardTool.Activities.AccessConditionTool
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:148:9-153:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:152:13-73
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:150:13-59
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:151:13-59
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:149:13-59
+activity#de.jxvtc.WaterCardTool.Activities.Preferences
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:154:9-159:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:158:13-63
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:156:13-59
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:157:13-49
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:155:13-51
+activity#de.jxvtc.WaterCardTool.Activities.DiffTool
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:160:9-165:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:164:13-61
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:162:13-59
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:163:13-47
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:161:13-48
+activity#de.jxvtc.WaterCardTool.Activities.BccTool
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:166:9-171:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:170:13-60
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:168:13-59
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:169:13-46
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:167:13-47
+activity#de.jxvtc.WaterCardTool.Activities.CloneUidTool
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:172:9-177:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:176:13-61
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:174:13-59
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:175:13-47
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:173:13-52
+activity#de.jxvtc.WaterCardTool.Activities.ImportExportTool
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:178:9-183:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:182:13-70
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:180:13-59
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:181:13-54
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:179:13-56
+activity#de.jxvtc.WaterCardTool.Activities.UidLogTool
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:184:9-189:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:188:13-64
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:186:13-59
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:187:13-47
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:185:13-50
+activity#de.jxvtc.WaterCardTool.Activities.DataConversionTool
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:190:9-195:20
+	android:label
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:194:13-72
+	android:configChanges
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:192:13-59
+	android:icon
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:193:13-50
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:191:13-58
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:69:13-71:62
+	android:resource
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:71:17-60
+	android:name
+		ADDED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:70:17-67
+uses-sdk
+INJECTED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml
+INJECTED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml
+MERGED from [androidx.preference:preference:1.2.1] C:\Users\Administrator\.gradle\caches\transforms-3\f17c21179b44b5d05856daeaf761c14c\transformed\preference-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.2.1] C:\Users\Administrator\.gradle\caches\transforms-3\f17c21179b44b5d05856daeaf761c14c\transformed\preference-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.3.6] C:\Users\Administrator\.gradle\caches\transforms-3\5a196f3011f09bbb706cd7461dc682fa\transformed\fragment-ktx-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.3.6] C:\Users\Administrator\.gradle\caches\transforms-3\5a196f3011f09bbb706cd7461dc682fa\transformed\fragment-ktx-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\5455636bc85181c0a21f822687264bac\transformed\activity-ktx-1.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\5455636bc85181c0a21f822687264bac\transformed\activity-ktx-1.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\77d2cbdb4de6c628519ab4d90979988c\transformed\lifecycle-runtime-ktx-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\77d2cbdb4de6c628519ab4d90979988c\transformed\lifecycle-runtime-ktx-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\461b4f411cee928226880e754ff5a0e9\transformed\lifecycle-viewmodel-ktx-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\461b4f411cee928226880e754ff5a0e9\transformed\lifecycle-viewmodel-ktx-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\4ff0462df5cc328cd57c17a376d61273\transformed\recyclerview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\4ff0462df5cc328cd57c17a376d61273\transformed\recyclerview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\6def6f813300e9bd7449777dc6fda46f\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\6def6f813300e9bd7449777dc6fda46f\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\a6cd131cca843ac389c33e92e06e4d74\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\a6cd131cca843ac389c33e92e06e4d74\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\b4cad56984880e50deaf9c7d03015f9c\transformed\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\b4cad56984880e50deaf9c7d03015f9c\transformed\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Administrator\.gradle\caches\transforms-3\c171526d8948803ebdd8f7f537c4461e\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Administrator\.gradle\caches\transforms-3\c171526d8948803ebdd8f7f537c4461e\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\d53df0ed3870466083a10ae7b1d96a92\transformed\activity-1.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\d53df0ed3870466083a10ae7b1d96a92\transformed\activity-1.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\3bbce49cc48fe419b46b3a70b74e2445\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\3bbce49cc48fe419b46b3a70b74e2445\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\f026369501957258f6b3c2df15bbbc17\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\f026369501957258f6b3c2df15bbbc17\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\97f39fae2b7b3f843f9f23d893056dd7\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\97f39fae2b7b3f843f9f23d893056dd7\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\a741b1b83017877fd5faca4170d7c389\transformed\lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\a741b1b83017877fd5faca4170d7c389\transformed\lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\145370d27bb295ca5acf1955d418de59\transformed\appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\145370d27bb295ca5acf1955d418de59\transformed\appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\95459dc98d6a26592f58f168a80b37d2\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\95459dc98d6a26592f58f168a80b37d2\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\26c4bc0cd3bebfe9e9f96714aaaed8ed\transformed\core-ktx-1.10.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\26c4bc0cd3bebfe9e9f96714aaaed8ed\transformed\core-ktx-1.10.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\bdb049da2e9eafcba6736cd19464dc52\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\bdb049da2e9eafcba6736cd19464dc52\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\57611defdae41c5a0cd51b4a30ebe0c4\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\57611defdae41c5a0cd51b4a30ebe0c4\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\cae6100490d69f8a2a6d147621460538\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\cae6100490d69f8a2a6d147621460538\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] C:\Users\Administrator\.gradle\caches\transforms-3\ced39659dee302de6f21b3ffe21b6e74\transformed\transition-1.4.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] C:\Users\Administrator\.gradle\caches\transforms-3\ced39659dee302de6f21b3ffe21b6e74\transformed\transition-1.4.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\9d9927cce17808912b68e6c4915d23dc\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\9d9927cce17808912b68e6c4915d23dc\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\f779d3d70e57d253791cb042bd462ad0\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\f779d3d70e57d253791cb042bd462ad0\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\3b7a90e1d5e8cd09c9bdd8ec991c91b8\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\3b7a90e1d5e8cd09c9bdd8ec991c91b8\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\b06296d823e93044885f7c93cd7e3aa9\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\b06296d823e93044885f7c93cd7e3aa9\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\Administrator\.gradle\caches\transforms-3\3b5a89454808b6f103e0ff3d2d28b84c\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\Administrator\.gradle\caches\transforms-3\3b5a89454808b6f103e0ff3d2d28b84c\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\0e721d4f4bdbac6a094b70523764327e\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\0e721d4f4bdbac6a094b70523764327e\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Administrator\.gradle\caches\transforms-3\0d6cca208fca7cf6632e529935f5fb2e\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Administrator\.gradle\caches\transforms-3\0d6cca208fca7cf6632e529935f5fb2e\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\b5e2b672b7b6f0fe9eb5ee827391dad2\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\b5e2b672b7b6f0fe9eb5ee827391dad2\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\fef51a713467a3c140939ddea475175d\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\fef51a713467a3c140939ddea475175d\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\6ff0237a39894abe18560bf06348e321\transformed\savedstate-ktx-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\6ff0237a39894abe18560bf06348e321\transformed\savedstate-ktx-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\84324423330e4729299f680d244c7100\transformed\savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\84324423330e4729299f680d244c7100\transformed\savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\800a3eb36036bfd493f29c5e552b6aa0\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\800a3eb36036bfd493f29c5e552b6aa0\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.1] C:\Users\Administrator\.gradle\caches\transforms-3\9632f2d589ec9eb1fc0072f7ef1fd142\transformed\lifecycle-livedata-core-ktx-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.1] C:\Users\Administrator\.gradle\caches\transforms-3\9632f2d589ec9eb1fc0072f7ef1fd142\transformed\lifecycle-livedata-core-ktx-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\85aadfeade8aa053845c471269dfe796\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\85aadfeade8aa053845c471269dfe796\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\42f7595b7cbf5cf9587647af6581f719\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\Administrator\.gradle\caches\transforms-3\42f7595b7cbf5cf9587647af6581f719\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\18fdc00465d0e048f1afa53d460faca6\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\18fdc00465d0e048f1afa53d460faca6\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\7920921d5df7516be8eede1b8d90c06e\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\7920921d5df7516be8eede1b8d90c06e\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\1117ba95609ee7f33b39b0d2e98af18a\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\1117ba95609ee7f33b39b0d2e98af18a\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\ea595d6e9bc5347c74e332902789636b\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\ea595d6e9bc5347c74e332902789636b\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+	android:targetSdkVersion
+		INJECTED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
+permission#de.jxvtc.WaterCardTool.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
+uses-permission#de.jxvtc.WaterCardTool.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:26:22-94

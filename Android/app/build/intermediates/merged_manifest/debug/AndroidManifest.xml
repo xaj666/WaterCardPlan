@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright 2013 Gerhard Klostermeier
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.jxvtc.WaterCardTool"
+    android:versionCode="64"
+    android:versionName="1.1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="33" />
+
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+
+    <permission
+        android:name="de.jxvtc.WaterCardTool.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="de.jxvtc.WaterCardTool.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+
+    <application
+        android:name="de.jxvtc.WaterCardTool.Common"
+        android:allowBackup="false"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:extractNativeLibs="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true" >
+
+        <!-- Main Activity -->
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.Login"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:label="@string/title_activity_main"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- MainMenu Activity -->
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.MainMenu"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:label="@string/title_activity_main"
+            android:launchMode="singleTop" />
+
+        <!-- Content Providers -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="de.jxvtc.WaterCardTool.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+
+        <!-- Other Activities -->
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.KeyMapCreator"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:icon="@drawable/map_keys_to_sector"
+            android:label="@string/title_activity_create_key_map" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.DumpEditor"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:icon="@drawable/edit_dump"
+            android:label="@string/title_activity_dump_editor" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.FileChooser"
+            android:icon="@drawable/open"
+            android:label="@string/title_activity_file_chooser"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.AccessConditionDecoder"
+            android:configChanges="orientation|screenSize"
+            android:icon="@drawable/access_conditions"
+            android:label="@string/title_activity_access_conditions" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.ValueBlocksToInt"
+            android:configChanges="orientation|screenSize"
+            android:icon="@drawable/value_block_to_int"
+            android:label="@string/title_activity_value_blocks" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.WriteTag"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:icon="@drawable/write_tag"
+            android:label="@string/title_activity_write_tag" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.ReadTag"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:icon="@drawable/read_tag"
+            android:label="@string/title_activity_read_tag" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.KeyEditor"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:icon="@drawable/edit_keys"
+            android:label="@string/title_activity_key_editor" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.HelpAndInfo"
+            android:configChanges="orientation|screenSize"
+            android:icon="@drawable/help_and_info"
+            android:label="@string/title_activity_help" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.HexToAscii"
+            android:configChanges="orientation|screenSize"
+            android:icon="@drawable/hex_to_ascii"
+            android:label="@string/title_activity_hex_to_ascii" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.TagInfoTool"
+            android:configChanges="orientation|screenSize"
+            android:icon="@drawable/tag_info"
+            android:label="@string/title_activity_tag_info" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.ValueBlockTool"
+            android:configChanges="orientation|screenSize"
+            android:icon="@drawable/value_block_tool"
+            android:label="@string/title_activity_value_block_tool" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.AccessConditionTool"
+            android:configChanges="orientation|screenSize"
+            android:icon="@drawable/access_condition_tool"
+            android:label="@string/title_activity_access_condition_tool" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.Preferences"
+            android:configChanges="orientation|screenSize"
+            android:icon="@drawable/preferences"
+            android:label="@string/title_activity_preferences" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.DiffTool"
+            android:configChanges="orientation|screenSize"
+            android:icon="@drawable/diff_tool"
+            android:label="@string/title_activity_diff_tool" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.BccTool"
+            android:configChanges="orientation|screenSize"
+            android:icon="@drawable/bcc_tool"
+            android:label="@string/title_activity_bcc_tool" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.CloneUidTool"
+            android:configChanges="orientation|screenSize"
+            android:icon="@drawable/clone_uid"
+            android:label="@string/title_activity_clone_uid" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.ImportExportTool"
+            android:configChanges="orientation|screenSize"
+            android:icon="@drawable/value_block_tool"
+            android:label="@string/title_activity_import_export_tool" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.UidLogTool"
+            android:configChanges="orientation|screenSize"
+            android:icon="@drawable/edit_dump"
+            android:label="@string/title_activity_uid_log_tool" >
+        </activity>
+        <activity
+            android:name="de.jxvtc.WaterCardTool.Activities.DataConversionTool"
+            android:configChanges="orientation|screenSize"
+            android:icon="@drawable/hex_to_ascii"
+            android:label="@string/title_activity_data_conversion_tool" >
+        </activity>
+
+        <uses-library
+            android:name="androidx.window.extensions"
+            android:required="false" />
+        <uses-library
+            android:name="androidx.window.sidecar"
+            android:required="false" />
+    </application>
+
+</manifest>

@@ -1,0 +1,446 @@
+[
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-hdpi_random.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-hdpi/random.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/menu_file_chooser_functions.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/menu/file_chooser_functions.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_preferences.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_preferences.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-mdpi_warning.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-mdpi/warning.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-xhdpi_random.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-xhdpi/random.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_write_tag.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_write_tag.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_preferences.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/preferences.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-xhdpi_arrow_up.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-xhdpi/arrow_up.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-mdpi_paste.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-mdpi/paste.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-ldpi_tools.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-ldpi/tools.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_hex_to_ascii.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_hex_to_ascii.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_data_conversion_tool.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_data_conversion_tool.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_value_block_to_int.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/value_block_to_int.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-ldpi_warning.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-ldpi/warning.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-mdpi_edit_dump.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-mdpi/edit_dump.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-ldpi_help_and_info.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-ldpi/help_and_info.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_tag_info_tool.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_tag_info_tool.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_map_keys_to_sector.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/map_keys_to_sector.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_dialog_save_file.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/dialog_save_file.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_key_editor.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_key_editor.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-mdpi_arrow_down.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-mdpi/arrow_down.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_access_conditions.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/access_conditions.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_bcc_tool.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/bcc_tool.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/xml_nfc_tech_filter.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/xml/nfc_tech_filter.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-hdpi_arrow_down.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-hdpi/arrow_down.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_hex_to_ascii.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/hex_to_ascii.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_diff_tool.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/diff_tool.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_file_chooser.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_file_chooser.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-ldpi_edit_dump.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-ldpi/edit_dump.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_tag_info.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/tag_info.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_value_block_tool.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_value_block_tool.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/menu_dump_file_types.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/menu/dump_file_types.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_clone_uid.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/clone_uid.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-ldpi_paste.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-ldpi/paste.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_edit_dump.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/edit_dump.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-ldpi_ic_launcher.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-ldpi/ic_launcher.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-hdpi_paste.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-hdpi/paste.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_bcc_tool.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_bcc_tool.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-ldpi_copy.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-ldpi/copy.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/menu_keys_file_types.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/menu/keys_file_types.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-hdpi_arrow_up.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-hdpi/arrow_up.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-ldpi_arrow_down.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-ldpi/arrow_down.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_read_tag.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/read_tag.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_help_and_info.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/help_and_info.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-xhdpi_paste.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-xhdpi/paste.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_diff_tool.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_diff_tool.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-mdpi_read_tag.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-mdpi/read_tag.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/menu_main_menu_functions.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/menu/main_menu_functions.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_create_key_map.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_create_key_map.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-xhdpi_copy.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-xhdpi/copy.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-mdpi_random.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-mdpi/random.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_read_tag.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_read_tag.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_dialog_write_sectors.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/dialog_write_sectors.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_edit_keys.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/edit_keys.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-xhdpi_arrow_down.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-xhdpi/arrow_down.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-ldpi_edit_keys.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-ldpi/edit_keys.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_access_condition_tool.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/access_condition_tool.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_list_item_small_text.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/list_item_small_text.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_random.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/random.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_import_export_tool.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_import_export_tool.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_warning.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/warning.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_tools.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/tools.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-ldpi_arrow_up.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-ldpi/arrow_up.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/menu_key_editor_functions.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/menu/key_editor_functions.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_write_tag.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/write_tag.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-mdpi_arrow_up.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-mdpi/arrow_up.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-hdpi_copy.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-hdpi/copy.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_login_page.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_login_page.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_open.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/open.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_dialog_donate.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/dialog_donate.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-ldpi_write_tag.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-ldpi/write_tag.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_access_condition_decoder.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_access_condition_decoder.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_uid_log_tool.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_uid_log_tool.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_access_condition_tool.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_access_condition_tool.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-mdpi_copy.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-mdpi/copy.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_dump_editor.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_dump_editor.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/menu_tools.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/menu/tools.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/xml_layout_border.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/xml/layout_border.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-mdpi_edit_keys.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-mdpi/edit_keys.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable_value_block_tool.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable/value_block_tool.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_help.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_help.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-mdpi_tools.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-mdpi/tools.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-ldpi_read_tag.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-ldpi/read_tag.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_value_blocks_to_int.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_value_blocks_to_int.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/menu_dump_editor_functions.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/menu/dump_editor_functions.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-ldpi_random.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-ldpi/random.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-mdpi_help_and_info.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-mdpi/help_and_info.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/xml_file_provider_paths.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/xml/file_provider_paths.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/drawable-mdpi_write_tag.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/drawable-mdpi/write_tag.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_main_menu.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_main_menu.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_list_item_diff_block.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/list_item_diff_block.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/menu_uid_log_tool_functions.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/menu/uid_log_tool_functions.xml"
+    },
+    {
+        "merged": "de.jxvtc.WaterCardTool.app-merged_res-26:/layout_activity_clone_uid_tool.xml.flat",
+        "source": "de.jxvtc.WaterCardTool.app-main-28:/layout/activity_clone_uid_tool.xml"
+    }
+]

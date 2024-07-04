@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="WaterCardTool"
+        android:textSize="30dp"
+        android:layout_marginTop="260dp" />
+
+
+    <EditText
+        android:id="@+id/editTextWriteTagData"
+        android:layout_width="350dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_alignLeft="@+id/editTextWriteTagBlock"
+        android:layout_below="@id/editTextWriteTagBlock"
+        android:hint="请输入Key密钥"
+
+        android:inputType="textCapCharacters|textNoSuggestions"
+        android:maxLength="32"
+        android:importantForAutofill="no" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="登录" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/AndroidID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:text="Android ID："
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

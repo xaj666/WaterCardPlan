@@ -1,0 +1,371 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3/*
+4 * Copyright 2013 Gerhard Klostermeier
+5 *
+6 * This program is free software: you can redistribute it and/or modify
+7 * it under the terms of the GNU General Public License as published by
+8 * the Free Software Foundation, either version 3 of the License, or
+9 * (at your option) any later version.
+10 *
+11 * This program is distributed in the hope that it will be useful,
+12 * but WITHOUT ANY WARRANTY; without even the implied warranty of
+13 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+14 * GNU General Public License for more details.
+15 *
+16 * You should have received a copy of the GNU General Public License
+17 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+18 */
+19-->
+20<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+21    package="de.jxvtc.WaterCardTool"
+22    android:versionCode="64"
+23    android:versionName="1.1.0" >
+24
+25    <uses-sdk
+26        android:minSdkVersion="19"
+27        android:targetSdkVersion="33" />
+28
+29    <uses-permission android:name="android.permission.NFC" />
+29-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:24:5-62
+29-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:24:22-59
+30    <uses-permission android:name="android.permission.INTERNET" />
+30-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:25:5-67
+30-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:25:22-64
+31    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+31-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:26:5-79
+31-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:26:22-76
+32
+33    <uses-feature
+33-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:29:5-31:35
+34        android:name="android.hardware.nfc"
+34-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:30:9-44
+35        android:required="true" />
+35-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:31:9-32
+36
+37    <permission
+37-->[androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
+38        android:name="de.jxvtc.WaterCardTool.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+38-->[androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
+39        android:protectionLevel="signature" />
+39-->[androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+40
+41    <uses-permission android:name="de.jxvtc.WaterCardTool.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+41-->[androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
+41-->[androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
+42
+43    <application
+43-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:33:5-197:19
+44        android:name="de.jxvtc.WaterCardTool.Common"
+44-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:34:9-31
+45        android:allowBackup="false"
+45-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:35:9-36
+46        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+46-->[androidx.core:core:1.10.1] C:\Users\Administrator\.gradle\caches\transforms-3\2134a3a9349f5fa7b58e0de824ac8269\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
+47        android:debuggable="true"
+48        android:extractNativeLibs="true"
+49        android:icon="@mipmap/ic_launcher"
+49-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:37:9-43
+50        android:label="@string/app_name"
+50-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:38:9-41
+51        android:requestLegacyExternalStorage="true"
+51-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:36:9-52
+52        android:theme="@style/AppTheme"
+52-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:39:9-40
+53        android:usesCleartextTraffic="true" >
+53-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:40:9-44
+54
+55        <!-- Main Activity -->
+56        <activity
+56-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:42:9-52:20
+57            android:name="de.jxvtc.WaterCardTool.Activities.Login"
+57-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:43:13-45
+58            android:configChanges="keyboardHidden|orientation|screenSize"
+58-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:44:13-74
+59            android:exported="true"
+59-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:46:13-36
+60            android:label="@string/title_activity_main"
+60-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:45:13-56
+61            android:launchMode="singleTop" >
+61-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:47:13-43
+62            <intent-filter>
+62-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:48:13-51:29
+63                <action android:name="android.intent.action.MAIN" />
+63-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:49:17-69
+63-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:49:25-66
+64
+65                <category android:name="android.intent.category.LAUNCHER" />
+65-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:50:17-77
+65-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:50:27-74
+66            </intent-filter>
+67        </activity>
+68
+69        <!-- MainMenu Activity -->
+70        <activity
+70-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:55:9-60:46
+71            android:name="de.jxvtc.WaterCardTool.Activities.MainMenu"
+71-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:56:13-48
+72            android:configChanges="orientation|screenSize"
+72-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:57:13-59
+73            android:exported="true"
+73-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:59:13-36
+74            android:label="@string/title_activity_main"
+74-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:58:13-56
+75            android:launchMode="singleTop" />
+75-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:60:13-43
+76
+77        <!-- Content Providers -->
+78        <provider
+79            android:name="androidx.core.content.FileProvider"
+79-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:64:13-62
+80            android:authorities="de.jxvtc.WaterCardTool.fileprovider"
+80-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:67:13-64
+81            android:exported="false"
+81-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:66:13-37
+82            android:grantUriPermissions="true" >
+82-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:65:13-47
+83            <meta-data
+83-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:69:13-71:62
+84                android:name="android.support.FILE_PROVIDER_PATHS"
+84-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:70:17-67
+85                android:resource="@xml/file_provider_paths" />
+85-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:71:17-60
+86        </provider>
+87
+88        <!-- Other Activities -->
+89        <activity
+89-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:76:9-81:20
+90            android:name="de.jxvtc.WaterCardTool.Activities.KeyMapCreator"
+90-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:77:13-53
+91            android:configChanges="keyboardHidden|orientation|screenSize"
+91-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:78:13-74
+92            android:icon="@drawable/map_keys_to_sector"
+92-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:79:13-56
+93            android:label="@string/title_activity_create_key_map" >
+93-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:80:13-66
+94        </activity>
+95        <activity
+95-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:82:9-87:20
+96            android:name="de.jxvtc.WaterCardTool.Activities.DumpEditor"
+96-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:83:13-50
+97            android:configChanges="keyboardHidden|orientation|screenSize"
+97-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:84:13-74
+98            android:icon="@drawable/edit_dump"
+98-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:85:13-47
+99            android:label="@string/title_activity_dump_editor" >
+99-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:86:13-63
+100        </activity>
+101        <activity
+101-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:88:9-93:20
+102            android:name="de.jxvtc.WaterCardTool.Activities.FileChooser"
+102-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:89:13-51
+103            android:icon="@drawable/open"
+103-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:90:13-42
+104            android:label="@string/title_activity_file_chooser"
+104-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:91:13-64
+105            android:windowSoftInputMode="stateAlwaysHidden" >
+105-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:92:13-60
+106        </activity>
+107        <activity
+107-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:94:9-99:20
+108            android:name="de.jxvtc.WaterCardTool.Activities.AccessConditionDecoder"
+108-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:95:13-62
+109            android:configChanges="orientation|screenSize"
+109-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:96:13-59
+110            android:icon="@drawable/access_conditions"
+110-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:97:13-55
+111            android:label="@string/title_activity_access_conditions" >
+111-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:98:13-69
+112        </activity>
+113        <activity
+113-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:100:9-105:20
+114            android:name="de.jxvtc.WaterCardTool.Activities.ValueBlocksToInt"
+114-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:101:13-56
+115            android:configChanges="orientation|screenSize"
+115-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:102:13-59
+116            android:icon="@drawable/value_block_to_int"
+116-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:103:13-56
+117            android:label="@string/title_activity_value_blocks" >
+117-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:104:13-64
+118        </activity>
+119        <activity
+119-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:106:9-111:20
+120            android:name="de.jxvtc.WaterCardTool.Activities.WriteTag"
+120-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:107:13-48
+121            android:configChanges="keyboardHidden|orientation|screenSize"
+121-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:108:13-74
+122            android:icon="@drawable/write_tag"
+122-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:109:13-47
+123            android:label="@string/title_activity_write_tag" >
+123-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:110:13-61
+124        </activity>
+125        <activity
+125-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:112:9-117:20
+126            android:name="de.jxvtc.WaterCardTool.Activities.ReadTag"
+126-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:113:13-47
+127            android:configChanges="keyboardHidden|orientation|screenSize"
+127-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:114:13-74
+128            android:icon="@drawable/read_tag"
+128-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:115:13-46
+129            android:label="@string/title_activity_read_tag" >
+129-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:116:13-60
+130        </activity>
+131        <activity
+131-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:118:9-123:20
+132            android:name="de.jxvtc.WaterCardTool.Activities.KeyEditor"
+132-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:119:13-49
+133            android:configChanges="keyboardHidden|orientation|screenSize"
+133-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:120:13-74
+134            android:icon="@drawable/edit_keys"
+134-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:121:13-47
+135            android:label="@string/title_activity_key_editor" >
+135-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:122:13-62
+136        </activity>
+137        <activity
+137-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:124:9-129:20
+138            android:name="de.jxvtc.WaterCardTool.Activities.HelpAndInfo"
+138-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:125:13-51
+139            android:configChanges="orientation|screenSize"
+139-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:126:13-59
+140            android:icon="@drawable/help_and_info"
+140-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:127:13-51
+141            android:label="@string/title_activity_help" >
+141-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:128:13-56
+142        </activity>
+143        <activity
+143-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:130:9-135:20
+144            android:name="de.jxvtc.WaterCardTool.Activities.HexToAscii"
+144-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:131:13-50
+145            android:configChanges="orientation|screenSize"
+145-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:132:13-59
+146            android:icon="@drawable/hex_to_ascii"
+146-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:133:13-50
+147            android:label="@string/title_activity_hex_to_ascii" >
+147-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:134:13-64
+148        </activity>
+149        <activity
+149-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:136:9-141:20
+150            android:name="de.jxvtc.WaterCardTool.Activities.TagInfoTool"
+150-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:137:13-51
+151            android:configChanges="orientation|screenSize"
+151-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:138:13-59
+152            android:icon="@drawable/tag_info"
+152-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:139:13-46
+153            android:label="@string/title_activity_tag_info" >
+153-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:140:13-60
+154        </activity>
+155        <activity
+155-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:142:9-147:20
+156            android:name="de.jxvtc.WaterCardTool.Activities.ValueBlockTool"
+156-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:143:13-54
+157            android:configChanges="orientation|screenSize"
+157-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:144:13-59
+158            android:icon="@drawable/value_block_tool"
+158-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:145:13-54
+159            android:label="@string/title_activity_value_block_tool" >
+159-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:146:13-68
+160        </activity>
+161        <activity
+161-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:148:9-153:20
+162            android:name="de.jxvtc.WaterCardTool.Activities.AccessConditionTool"
+162-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:149:13-59
+163            android:configChanges="orientation|screenSize"
+163-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:150:13-59
+164            android:icon="@drawable/access_condition_tool"
+164-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:151:13-59
+165            android:label="@string/title_activity_access_condition_tool" >
+165-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:152:13-73
+166        </activity>
+167        <activity
+167-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:154:9-159:20
+168            android:name="de.jxvtc.WaterCardTool.Activities.Preferences"
+168-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:155:13-51
+169            android:configChanges="orientation|screenSize"
+169-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:156:13-59
+170            android:icon="@drawable/preferences"
+170-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:157:13-49
+171            android:label="@string/title_activity_preferences" >
+171-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:158:13-63
+172        </activity>
+173        <activity
+173-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:160:9-165:20
+174            android:name="de.jxvtc.WaterCardTool.Activities.DiffTool"
+174-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:161:13-48
+175            android:configChanges="orientation|screenSize"
+175-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:162:13-59
+176            android:icon="@drawable/diff_tool"
+176-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:163:13-47
+177            android:label="@string/title_activity_diff_tool" >
+177-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:164:13-61
+178        </activity>
+179        <activity
+179-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:166:9-171:20
+180            android:name="de.jxvtc.WaterCardTool.Activities.BccTool"
+180-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:167:13-47
+181            android:configChanges="orientation|screenSize"
+181-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:168:13-59
+182            android:icon="@drawable/bcc_tool"
+182-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:169:13-46
+183            android:label="@string/title_activity_bcc_tool" >
+183-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:170:13-60
+184        </activity>
+185        <activity
+185-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:172:9-177:20
+186            android:name="de.jxvtc.WaterCardTool.Activities.CloneUidTool"
+186-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:173:13-52
+187            android:configChanges="orientation|screenSize"
+187-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:174:13-59
+188            android:icon="@drawable/clone_uid"
+188-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:175:13-47
+189            android:label="@string/title_activity_clone_uid" >
+189-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:176:13-61
+190        </activity>
+191        <activity
+191-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:178:9-183:20
+192            android:name="de.jxvtc.WaterCardTool.Activities.ImportExportTool"
+192-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:179:13-56
+193            android:configChanges="orientation|screenSize"
+193-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:180:13-59
+194            android:icon="@drawable/value_block_tool"
+194-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:181:13-54
+195            android:label="@string/title_activity_import_export_tool" >
+195-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:182:13-70
+196        </activity>
+197        <activity
+197-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:184:9-189:20
+198            android:name="de.jxvtc.WaterCardTool.Activities.UidLogTool"
+198-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:185:13-50
+199            android:configChanges="orientation|screenSize"
+199-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:186:13-59
+200            android:icon="@drawable/edit_dump"
+200-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:187:13-47
+201            android:label="@string/title_activity_uid_log_tool" >
+201-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:188:13-64
+202        </activity>
+203        <activity
+203-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:190:9-195:20
+204            android:name="de.jxvtc.WaterCardTool.Activities.DataConversionTool"
+204-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:191:13-58
+205            android:configChanges="orientation|screenSize"
+205-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:192:13-59
+206            android:icon="@drawable/hex_to_ascii"
+206-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:193:13-50
+207            android:label="@string/title_activity_data_conversion_tool" >
+207-->E:\AndroidProject\Water Card Tool\app\src\main\AndroidManifest.xml:194:13-72
+208        </activity>
+209
+210        <uses-library
+210-->[androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+211            android:name="androidx.window.extensions"
+211-->[androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+212            android:required="false" />
+212-->[androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+213        <uses-library
+213-->[androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+214            android:name="androidx.window.sidecar"
+214-->[androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+215            android:required="false" />
+215-->[androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+216    </application>
+217
+218</manifest>
