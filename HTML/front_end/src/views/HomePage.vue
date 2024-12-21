@@ -1,37 +1,34 @@
 <!-- Home.vue -->
 <template>
-  <div id="app">
-    <!--网页主体-->
-    <el-col>
-      <h1>WaterCardPlan后台管理系统</h1>
-      <el-row type="flex">
-        <el-button type="primary" icon="el-icon-user" @click="addUser">添加</el-button>
-        <el-button type="primary" icon="el-icon-loading" @click="refreshData">刷新</el-button>
-      </el-row>
-      <div style="height: 10px;"></div>
-      <el-table :data="tableData" border width="100%">
-        <el-table-column prop="number" label="序号" width='100' align="center">
-        </el-table-column>
-        <el-table-column prop="username" label="用户"  align="center">
-        </el-table-column>
-        <el-table-column prop="secret_key" label="Key序列号"  align="center">
-        </el-table-column>
-        <el-table-column prop="android_id" label="设备码"  align="center">
-        </el-table-column>
-        <el-table-column prop="score" label="积分"  align="center">
-        </el-table-column>
-        <el-table-column prop="ip" label="登录IP"  align="center">
-        </el-table-column>
-        <el-table-column label="操作"  align="center">
-          <template slot-scope="scope">
-            <!--修改按钮-->
-            <el-button type="primary" icon="el-icon-edit" circle @click="updateUser(scope.row)"></el-button>
-            <!--删除按钮-->
-            <el-button type="danger" icon="el-icon-delete" circle @click="deleteUser(scope.row)"></el-button>
-          </template>
-        </el-table-column>
-      </el-table>
-    </el-col>
+  <div class="home-container">
+    <h1>WaterCardPlan后台管理系统</h1>
+    <el-row type="flex">
+      <el-button type="primary" icon="el-icon-user" @click="addUser">添加</el-button>
+      <el-button type="primary" icon="el-icon-loading" @click="refreshData">刷新</el-button>
+    </el-row>
+    <div style="height: 10px;"></div>
+    <el-table :data="tableData" border width="100%">
+      <el-table-column prop="number" label="序号" width='100' align="center">
+      </el-table-column>
+      <el-table-column prop="username" label="用户"  align="center">
+      </el-table-column>
+      <el-table-column prop="secret_key" label="Key序列号"  align="center">
+      </el-table-column>
+      <el-table-column prop="android_id" label="设备码"  align="center">
+      </el-table-column>
+      <el-table-column prop="score" label="积分"  align="center">
+      </el-table-column>
+      <el-table-column prop="ip" label="登录IP"  align="center">
+      </el-table-column>
+      <el-table-column label="操作"  align="center">
+        <template slot-scope="scope">
+          <!--修改按钮-->
+          <el-button type="primary" icon="el-icon-edit" circle @click="updateUser(scope.row)"></el-button>
+          <!--删除按钮-->
+          <el-button type="danger" icon="el-icon-delete" circle @click="deleteUser(scope.row)"></el-button>
+        </template>
+      </el-table-column>
+    </el-table>
     <!-- 用户对话框 -->
     <el-dialog :title="userTitle" :visible.sync="AddUseDialogVisible" width="30%">
       <el-form ref="userForm" :model="userForm" :rules="loginRules" label-width="80px">
@@ -58,11 +55,11 @@
 
 <script>
 import axios from 'axios';// 引入axios
-const backendBaseUrl = 'http://122.51.66.112:4867'// 设置后端API的基本URL
+const backendBaseUrl = 'http://122.51.66.112:4866'// 设置后端API的基本URL
 export default {
   //网页加载
   created() {
-    //初始刷新
+    //初始���新
     this.refreshData();
   },
   // 初始化数据
@@ -262,13 +259,13 @@ export default {
 
 <!--CSS样式-->
 <style>
+.home-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+}
 h1 {
   text-align: center;
+  margin-bottom: 20px;
 }
-
-#app {
-  width: 80%;
-  margin: 0 auto;
-}
-
 </style>

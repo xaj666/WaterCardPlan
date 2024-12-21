@@ -44,6 +44,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -141,6 +144,9 @@ public class KeyMapCreator extends BasicActivity {
     private File mKeyDirPath;
     private int mFirstSector;
     private int mLastSector;
+    private String currentOrderId; // 当前订单ID
+
+    private static final String TAG = "KeyMapCreator";
 
     /**
      * Set layout, set the mapping range
@@ -351,6 +357,33 @@ public class KeyMapCreator extends BasicActivity {
      */
     public void onCreateKeyMap(View view) {
         Login.ApiManager.deductScore(Login.SeverKey,WriteTag.Money);
+        
+        // 创建充值订单
+        OrderManager.createOrder(
+            Login.SeverName,  // 用户名
+            Login.SeverID,    // Android ID
+            WriteTag.Money,   // 充值金额
+            Login.IP,         // IP地址
+            new OrderManager.OrderCallback() {
+                @Override
+                public void onSuccess(String message) {
+                    Log.d(TAG, "订单创建成功: " + message);
+                    try {
+                        JSONObject jsonResponse = new JSONObject(message);
+                        currentOrderId = jsonResponse.getString("orderId");
+                    } catch (JSONException e) {
+                        Log.e(TAG, "解析订单ID失败: " + e.getMessage());
+                    }
+                }
+
+                @Override
+                public void onError(String error) {
+                    Log.e(TAG, "订单创建失败: " + error);
+                    Toast.makeText(KeyMapCreator.this, "订单创建失败: " + error, Toast.LENGTH_SHORT).show();
+                }
+            }
+        );
+
         boolean saveLastUsedKeyFiles = Common.getPreferences().getBoolean(
             Preference.SaveLastUsedKeyFiles.toString(), true);
         StringBuilder lastSelectedKeyFiles = new StringBuilder();
@@ -514,21 +547,40 @@ public class KeyMapCreator extends BasicActivity {
      * @see #onCreateKeyMap(View)
      */
     private void keyMapCreated(MCReader reader) {
-        // LOW: Return key map in intent.
         if (reader.getKeyMap().size() == 0) {
             Common.setKeyMap(null);
+            // 更新订单状态为失败
+            OrderManager.updateOrderStatus(currentOrderId, 2, new OrderManager.OrderCallback() {
+                @Override
+                public void onSuccess(String message) {
+                    Log.d(TAG, "订单状态更新成功: " + message);
+                }
+
+                @Override
+                public void onError(String error) {
+                    Log.e(TAG, "订单状态更新失败: " + error);
+                }
+            });
             // Error. No valid key found.
             Toast.makeText(this, R.string.info_no_key_found,
                 Toast.LENGTH_LONG).show();
         } else {
             Common.setKeyMap(reader.getKeyMap());
-//            Intent intent = new Intent();
-//            intent.putExtra(EXTRA_KEY_MAP, mMCReader);
-//            setResult(Activity.RESULT_OK, intent);
+            // 更新订单状态为成功
+            OrderManager.updateOrderStatus(currentOrderId, 1, new OrderManager.OrderCallback() {
+                @Override
+                public void onSuccess(String message) {
+                    Log.d(TAG, "订单状态更新成功: " + message);
+                }
+
+                @Override
+                public void onError(String error) {
+                    Log.e(TAG, "订单状态更新失败: " + error);
+                }
+            });
             setResult(Activity.RESULT_OK);
             finish();
         }
-
     }
 
     /**

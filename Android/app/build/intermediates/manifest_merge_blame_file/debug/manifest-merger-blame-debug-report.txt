@@ -20,7 +20,7 @@
 20<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 21    package="de.jxvtc.WaterCardTool"
 22    android:versionCode="64"
-23    android:versionName="1.1.0" >
+23    android:versionName="2.0.0" >
 24
 25    <uses-sdk
 26        android:minSdkVersion="19"
@@ -366,6 +366,28 @@
 214-->[androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
 215            android:required="false" />
 215-->[androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\70861cda0aa6e68da6b39370d014fe62\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
-216    </application>
-217
-218</manifest>
+216
+217        <provider
+217-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\4ad949640a45d11a82393ddb17691d63\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+218            android:name="androidx.startup.InitializationProvider"
+218-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\4ad949640a45d11a82393ddb17691d63\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+219            android:authorities="de.jxvtc.WaterCardTool.androidx-startup"
+219-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\4ad949640a45d11a82393ddb17691d63\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+220            android:exported="false" >
+220-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\4ad949640a45d11a82393ddb17691d63\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+221            <meta-data
+221-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\4ad949640a45d11a82393ddb17691d63\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+222                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+222-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\4ad949640a45d11a82393ddb17691d63\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+223                android:value="androidx.startup" />
+223-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\4ad949640a45d11a82393ddb17691d63\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+224            <meta-data
+224-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Administrator\.gradle\caches\transforms-3\e99650d1fb5b6029292105454e9d93a8\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+225                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+225-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Administrator\.gradle\caches\transforms-3\e99650d1fb5b6029292105454e9d93a8\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+226                android:value="androidx.startup" />
+226-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Administrator\.gradle\caches\transforms-3\e99650d1fb5b6029292105454e9d93a8\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+227        </provider>
+228    </application>
+229
+230</manifest>

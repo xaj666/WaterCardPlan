@@ -10,10 +10,10 @@ const port = process.env.PORT || 4867;
 const secretKey = crypto.randomBytes(32).toString('hex');
 
 const dbConfig = {
-    host: 'localhost',
+    host: '127.0.0.1',
     user: 'WaterCardPlan',
-    password: '497545',
-    database: 'watercardplan'
+    password: 'H5Aj33kww7NDcKzs',
+    database: 'WaterCardPlan'
 };
 
 let pool = mysql.createPool(dbConfig);
@@ -122,7 +122,7 @@ app.post('/api/addUser', (req, res) => {
 // 删除用户
 app.delete('/api/deleteUser/:id', (req, res) => {
     const id = req.params.id; // 获取要删除的用户名
-    const sql = `DELETE FROM User WHERE id = ?`; // SQL 查询语句
+    const sql = `DELETE FROM User WHERE id = ?`; // SQL 查询语���
     pool.query(sql, [id], (err, result) => {
         if (err) {
             console.error('删除用户失败:', err);
@@ -339,6 +339,168 @@ app.post('/api/addIp/:key', (req, res) => {
         }
 
         res.json({ message: 'IP 地址更新成功' });
+    });
+});
+
+// 生成订单号函数
+function generateOrderId() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const random = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+    return `ORD${year}${month}${day}${random}`;
+}
+
+// 获取订单列表
+app.get('/api/orders', (req, res) => {
+    const { username, status, startDate, endDate, page = 1, pageSize = 10 } = req.query;
+    let sql = 'SELECT * FROM `Order` WHERE 1=1';
+    const params = [];
+
+    // 构建查询条件
+    if (username) {
+        sql += ' AND username LIKE ?';
+        params.push(`%${username}%`);
+    }
+    if (status) {
+        sql += ' AND status = ?';
+        params.push(parseInt(status));
+    }
+    if (startDate && endDate) {
+        sql += ' AND create_time BETWEEN ? AND ?';
+        params.push(startDate, endDate);
+    }
+
+    // 添加排序
+    sql += ' ORDER BY create_time DESC';
+
+    // 获取总数的SQL
+    const countSql = sql.replace('SELECT *', 'SELECT COUNT(*) as total');
+
+    // 添加分页
+    const offset = (page - 1) * pageSize;
+    sql += ' LIMIT ? OFFSET ?';
+    params.push(parseInt(pageSize), offset);
+
+    // 执行查询
+    pool.query(countSql, params.slice(0, -2), (err, countResult) => {
+        if (err) {
+            console.error('查询订单总数失败:', err);
+            return res.status(500).json({ error: '查询失败' });
+        }
+
+        const total = countResult[0].total;
+
+        pool.query(sql, params, (err, results) => {
+            if (err) {
+                console.error('查询订单列表失败:', err);
+                return res.status(500).json({ error: '查询失败' });
+            }
+
+            // 转换状态码为文字描述
+            const orders = results.map(order => ({
+                ...order,
+                statusText: order.status === 0 ? '处理中' : 
+                           order.status === 1 ? '充值成功' : '充值失败'
+            }));
+
+            res.json({
+                total,
+                data: orders,
+                page: parseInt(page),
+                pageSize: parseInt(pageSize)
+            });
+        });
+    });
+});
+
+// 创建订单
+app.post('/api/orders', (req, res) => {
+    const { username, android_id, amount, ip } = req.body;
+    const order = {
+        order_id: generateOrderId(),
+        username,
+        android_id,
+        amount,
+        ip,
+        status: 0, // 默认状态为处理中
+        create_time: new Date()
+    };
+
+    pool.query('INSERT INTO `Order` SET ?', order, (err, result) => {
+        if (err) {
+            console.error('创建订单失败:', err);
+            return res.status(500).json({ error: '创建订单失败' });
+        }
+        res.status(201).json({ 
+            message: '订单创建成功',
+            orderId: order.order_id
+        });
+    });
+});
+
+// 更新订单状态
+app.put('/api/orders/:orderId/status', (req, res) => {
+    const { orderId } = req.params;
+    const { status } = req.body;
+
+    if (![0, 1, 2].includes(parseInt(status))) {
+        return res.status(400).json({ error: '无效的状态值' });
+    }
+
+    pool.query(
+        'UPDATE `Order` SET status = ? WHERE order_id = ?',
+        [status, orderId],
+        (err, result) => {
+            if (err) {
+                console.error('更新订单状态失败:', err);
+                return res.status(500).json({ error: '更新订单状态失败' });
+            }
+            if (result.affectedRows === 0) {
+                return res.status(404).json({ error: '订单不存在' });
+            }
+            res.json({ message: '订单状态更新成功' });
+        }
+    );
+});
+
+// 删除订单
+app.delete('/api/orders/:orderId', (req, res) => {
+    const { orderId } = req.params;
+
+    pool.query('DELETE FROM `Order` WHERE order_id = ?', [orderId], (err, result) => {
+        if (err) {
+            console.error('删除订单失败:', err);
+            return res.status(500).json({ error: '删除订单失败' });
+        }
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ error: '订单不存在' });
+        }
+        res.json({ message: '订单删除成功' });
+    });
+});
+
+// 获取订单详情
+app.get('/api/orders/:orderId', (req, res) => {
+    const { orderId } = req.params;
+
+    pool.query('SELECT * FROM `Order` WHERE order_id = ?', [orderId], (err, results) => {
+        if (err) {
+            console.error('查询订单详情失败:', err);
+            return res.status(500).json({ error: '查询订单详情失败' });
+        }
+        if (results.length === 0) {
+            return res.status(404).json({ error: '订单不存在' });
+        }
+
+        const order = {
+            ...results[0],
+            statusText: results[0].status === 0 ? '处理中' : 
+                       results[0].status === 1 ? '充值成功' : '充值失败'
+        };
+
+        res.json(order);
     });
 });
 

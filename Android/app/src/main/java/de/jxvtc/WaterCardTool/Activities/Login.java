@@ -16,9 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import android.app.Activity;
-
+import android.app.ProgressDialog;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,6 +42,10 @@ import java.util.Enumeration;
 
 import de.jxvtc.WaterCardTool.R;
 
+import androidx.core.content.ContextCompat;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
 
 public class Login extends Activity {
 
@@ -53,16 +56,16 @@ public class Login extends Activity {
     public static String SeverScore;
     private static final String TAG = "LoginTag";
 
-    private static String API_KEY = "http://122.51.66.112:4867/api/keys";
-    private static String API_COUNT = "http://122.51.66.112:4867/api/count";
-    private  static String API_INFO = "http://122.51.66.112:4867/api/announcement";
+    private static String API_KEY = "http://122.51.66.112:4866/api/keys";
+    private static String API_COUNT = "http://122.51.66.112:4866/api/count";
+    private  static String API_INFO = "http://122.51.66.112:4866/api/announcement";
     private static String API_NAME;
     public static String IP;
     public static String SeverName;
 
     public static int SeverCount;
 
-    private static String API_Android = "http://122.51.66.112:4867/api/Android?secret_key=xaj";
+    private static String API_Android = "http://122.51.66.112:4866/api/Android?secret_key=xaj";
     public static String API_Score;
     private String[] keysArray;
 
@@ -72,6 +75,11 @@ public class Login extends Activity {
 
     private boolean AndroidFlag;
 
+    private ProgressDialog progressDialog;
+
+    private EditText editText;
+    private SharedPreferences sharedPreferences;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,10 +87,9 @@ public class Login extends Activity {
 
         Button button = findViewById(R.id.button1);
         TextView ID = findViewById(R.id.AndroidID);
-        EditText editText = findViewById(R.id.editTextWriteTagData);
+        editText = findViewById(R.id.editTextWriteTagData);
 
-        // 从 SharedPreferences 中获取保存的文本，如果没有保存的值则使用空字符串
-        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         String savedText = sharedPreferences.getString("savedText", "");
         editText.setText(savedText);
 
@@ -105,71 +112,28 @@ public class Login extends Activity {
 
         // 设置点击事件监听器
         button.setOnClickListener(v -> {
+            // 显示加载对话框
+            showProgressDialog("正在验证...");
+
             KeysFlag = false;
             AndroidFlag = false;
 
-            if (keysArray != null) {
-                for (String key : keysArray) {
-                    if (editText.getText().toString().equals(key)) {
-                        KeysFlag = true;
-                        API_Android = "http://122.51.66.112:4867/api/Android?secret_key=" + key;
-                        API_NAME = "http://122.51.66.112:4867/api/GetName?secret_key=" + key;
-                        API_Score = "http://122.51.66.112:4867/api/GetScore?secret_key=" + key;
-                        SeverKey = key;
-                        Log.d(TAG, "Key success:" + API_Android);
-                        break;
-                    }
-                }
+            // 检查网络连接
+            if (!isNetworkAvailable()) {
+                hideProgressDialog();
+                Toast.makeText(getApplicationContext(), "网络连接失��，请检查网络设置", Toast.LENGTH_SHORT).show();
+                return;
             }
 
-            //异步获取服务器端的数据
-            fetchAndroidSync();
-
-
-            if (AndroidArray != null && KeysFlag) {
-                for (String Android_id : AndroidArray) {
-                    if (androidId.equals(Android_id)) {
-                        AndroidFlag = true;
-                        Log.d(TAG, "ID success:" + Android_id);
-                        break;
-                    }
-                }
+            // 验证输入
+            if (editText.getText().toString().trim().isEmpty()) {
+                hideProgressDialog();
+                Toast.makeText(getApplicationContext(), "请输入密钥", Toast.LENGTH_SHORT).show();
+                return;
             }
 
-            //获取用户
-            fetchNameSync();
-
-            if (KeysFlag == false)
-                Toast.makeText(getApplicationContext(), "Key密钥验证失败", Toast.LENGTH_SHORT).show();
-            else if (AndroidFlag == false)
-                Toast.makeText(getApplicationContext(), "Android ID验证失败", Toast.LENGTH_SHORT).show();
-
-            //获取积分
-            fetchScoreSync();
-
-
-            if (KeysFlag && AndroidFlag) {
-                // 保存输入框中的文本到 SharedPreferences
-                String inputText = editText.getText().toString();
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("savedText", inputText);
-                editor.apply();
-                IP = GetIP();
-
-                setLoggedIn(true);
-                // 在登录成功后返回到 Menu 页面
-                Intent intent = new Intent(Login.this, MainMenu.class);
-                //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-                finish(); // 结束当前的 Login 页面
-
-                //提示
-                Toast.makeText(getApplicationContext(), "密钥验证成功", Toast.LENGTH_SHORT).show();
-                // 关闭当前的活动
-                finish();
-            }
-
-
+            // 使用新的异步任务处理登录
+            new LoginTask().execute(editText.getText().toString(), androidId);
         });
 
         // 打印 Android ID 到控制台
@@ -197,7 +161,7 @@ public class Login extends Activity {
         editor.apply();
     }
 
-    // 将文本复制到剪贴板的方法
+    // 将文本复制到剪贴版的方法
     private void copyToClipboard(String text) {
         ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
         ClipData clipData = ClipData.newPlainText("Android ID", text);
@@ -272,7 +236,7 @@ public class Login extends Activity {
 
             @Override
             protected void onPostExecute(Void aVoid) {
-                // 在这里处理你得到的keys数据
+                // 在这���处理你得到的keys数据
                 if (keysArray != null && keysArray.length > 0) {
                     StringBuilder keysBuilder = new StringBuilder();
                     for (String key : keysArray) {
@@ -369,7 +333,7 @@ public class Login extends Activity {
 
         thread.start();
         try {
-            thread.join(); // 等待网络请求线程执行完毺
+            thread.join(); // 等��网络请求线程执行完毺
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -467,7 +431,7 @@ public class Login extends Activity {
     //获取服务器Score数据
     @SuppressLint("StaticFieldLeak")
     private void fetchScoreSync() {
-        // 在新线程中执行网络请求
+        // 在新���程中执行网络请求
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -528,7 +492,7 @@ public class Login extends Activity {
                     }
                 }
 
-                // 处理获取到的数据
+                // 处理��取到的数据
                 if (AndroidArray != null && AndroidArray.length > 0) {
                     StringBuilder keysBuilder = new StringBuilder();
                     for (String key : AndroidArray) {
@@ -566,7 +530,7 @@ public class Login extends Activity {
             protected String doInBackground(String... params) {
                 String key = params[0];
                 int scoreToDeduct = Integer.parseInt(params[1]);
-                String apiUrl = "http://122.51.66.112:4867/api/deductScore/" + key;
+                String apiUrl = "http://122.51.66.112:4866/api/deductScore/" + key;
 
                 try {
                     URL url = new URL(apiUrl);
@@ -767,6 +731,194 @@ public class Login extends Activity {
                 }
             }
         }.execute();
+    }
+
+    // 添加网络检查方法
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager = (ConnectivityManager)
+            ContextCompat.getSystemService(this, ConnectivityManager.class);
+        if (connectivityManager != null) {
+            NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+            return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+        }
+        return false;
+    }
+
+    // 添加进度对话框方法
+    private void showProgressDialog(String message) {
+        if (progressDialog == null) {
+            progressDialog = new ProgressDialog(this);
+            progressDialog.setCancelable(false);
+        }
+        progressDialog.setMessage(message);
+        progressDialog.show();
+    }
+
+    private void hideProgressDialog() {
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
+    }
+
+    // 添加新的异步任务类处理登录
+    @SuppressLint("StaticFieldLeak")
+    private class LoginTask extends AsyncTask<String, Void, LoginResult> {
+        @Override
+        protected LoginResult doInBackground(String... params) {
+            String key = params[0];
+            String androidId = params[1];
+            LoginResult result = new LoginResult();
+
+            try {
+                // 验证密钥
+                if (keysArray != null) {
+                    for (String validKey : keysArray) {
+                        if (key.equals(validKey)) {
+                            result.keyValid = true;
+                            API_Android = "http://122.51.66.112:4866/api/Android?secret_key=" + key;
+                            API_NAME = "http://122.51.66.112:4866/api/GetName?secret_key=" + key;
+                            API_Score = "http://122.51.66.112:4866/api/GetScore?secret_key=" + key;
+                            SeverKey = key;
+                            break;
+                        }
+                    }
+                }
+
+                // 如果密钥有效，继续验证 Android ID
+                if (result.keyValid) {
+                    fetchAndroidSync();
+                    if (AndroidArray != null) {
+                        for (String validAndroidId : AndroidArray) {
+                            if (androidId.equals(validAndroidId)) {
+                                result.androidIdValid = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                // 如果都验证通过，获取用户信息和积分
+                if (result.keyValid && result.androidIdValid) {
+                    fetchNameSync();
+                    fetchScoreSync();
+                    result.success = true;
+                }
+
+            } catch (Exception e) {
+                result.error = e.getMessage();
+                Log.e(TAG, "Login error: ", e);
+            }
+
+            return result;
+        }
+
+        @Override
+        protected void onPostExecute(LoginResult result) {
+            hideProgressDialog();
+
+            if (result.error != null) {
+                Toast.makeText(getApplicationContext(), "登录失败: " + result.error, Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (!result.keyValid) {
+                Toast.makeText(getApplicationContext(), "Key密钥验证失败", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (!result.androidIdValid) {
+                Toast.makeText(getApplicationContext(), "Android ID验证失败", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (result.success) {
+                // 保存登录状态和密钥
+                String inputText = editText.getText().toString();
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("savedText", inputText);
+                editor.apply();
+
+                IP = GetIP();
+                // 上传IP地址
+                new UploadIPTask().execute(SeverKey, IP);
+
+                setLoggedIn(true);
+
+                Intent intent = new Intent(Login.this, MainMenu.class);
+                startActivity(intent);
+                finish();
+
+                Toast.makeText(getApplicationContext(), "登录成功", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    // 添加登录结果类
+    private static class LoginResult {
+        boolean keyValid = false;
+        boolean androidIdValid = false;
+        boolean success = false;
+        String error = null;
+    }
+
+    // 添加新的异步任务类处理IP上传
+    @SuppressLint("StaticFieldLeak")
+    private class UploadIPTask extends AsyncTask<String, Void, Boolean> {
+        @Override
+        protected Boolean doInBackground(String... params) {
+            String key = params[0];
+            String ip = params[1];
+            String apiUrl = "http://122.51.66.112:4866/api/addIp/" + key;
+
+            try {
+                URL url = new URL(apiUrl);
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("POST");
+                connection.setRequestProperty("Content-Type", "application/json");
+                connection.setDoOutput(true);
+
+                // 创建JSON对象
+                JSONObject jsonParam = new JSONObject();
+                jsonParam.put("ip", ip);
+
+                // 写入JSON数据
+                OutputStream os = connection.getOutputStream();
+                os.write(jsonParam.toString().getBytes());
+                os.flush();
+                os.close();
+
+                // 获取响应
+                int responseCode = connection.getResponseCode();
+                if (responseCode == HttpURLConnection.HTTP_OK) {
+                    BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                    StringBuilder response = new StringBuilder();
+                    String line;
+                    while ((line = in.readLine()) != null) {
+                        response.append(line);
+                    }
+                    in.close();
+
+                    JSONObject jsonResponse = new JSONObject(response.toString());
+                    return jsonResponse.has("message") &&
+                           jsonResponse.getString("message").equals("IP 地址更新成功");
+                }
+
+            } catch (Exception e) {
+                Log.e(TAG, "Error uploading IP: " + e.getMessage());
+            }
+            return false;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean success) {
+            if (!success) {
+                Log.e(TAG, "IP地址上传失败");
+                // 可以选择是否显示提示
+                // Toast.makeText(Login.this, "IP地址上传失败", Toast.LENGTH_SHORT).show();
+            } else {
+                Log.d(TAG, "IP地址上传成功");
+            }
+        }
     }
 
 }

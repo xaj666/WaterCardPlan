@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "de.jxvtc.WaterCardTool.app-mergeDebugResources-24:/values-v16/values-v16.xml",
+            "outputFile": "de.jxvtc.WaterCardTool.app-mergeDebugResources-28:/values-v16/values-v16.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\2134a3a9349f5fa7b58e0de824ac8269\\transformed\\core-1.10.1\\res\\values-v16\\values-v16.xml",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\b4cad56984880e50deaf9c7d03015f9c\\transformed\\appcompat-1.1.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\550d8edbbeedfe316512dc61664a3e26\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
